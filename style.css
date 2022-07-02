@@ -1,0 +1,302 @@
+* {
+  box-sizing: border-box;
+  font-family: "Titillium Web";
+  padding: 0;
+  margin: 0;
+  color: #fff;
+}
+
+body {
+  background: #050505;
+}
+
+button{
+  outline: none;
+  border: none;
+}
+
+a {
+  color: #B5B5B5;
+  text-decoration: none;
+}
+
+.highlighted {
+  color: #29B1A5;
+  font-weight: 700;
+}
+
+.glow {
+  top: 0;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 1.5rem;
+}
+.nav .logo {
+  width: 9rem;
+  cursor: pointer;
+}
+.nav .navContent {
+  position: relative;
+  height: 1.7rem;
+  top: 1.2rem;
+}
+.nav .navContent .navLink {
+  padding: 1.5rem;
+  font-weight: 300;
+  transition: 0.2s;
+}
+.nav .navContent .navLink:hover {
+  color: #fff;
+}
+.nav .navContent .active {
+  font-weight: 600;
+  color: #fff;
+}
+.nav .navContent .active:hover {
+  color: #B5B5B5;
+}
+.nav .connectWallet {
+  position: relative;
+  top: 0.5rem;
+  padding: 0 2rem;
+  font-size: 1rem;
+  background: none;
+  border: 2px solid #29B1A5;
+  border-radius: 2px;
+  color: #29B1A5;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+.nav .connectWallet:hover {
+  background: #29B1A5;
+  color: white;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 5rem;
+}
+
+.rightSection{
+  width: 50%;
+}
+
+.leftSection .content{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.leftSection .content h1{
+  font-size: 4rem;
+}
+
+.leftSection .content h3{
+  font-size: 1.2rem;
+  font-weight: 200;
+  color: #B5B5B5;
+}
+
+.leftSection .content button{
+  background: linear-gradient(94.44deg, #29B1A5 -12.02%, rgba(41, 177, 165, 0.5) 105.01%);
+  border-radius: 3px;
+  font-size: 1rem;
+  padding: .75rem 2rem;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.leftSection .content button span{
+  position: relative;
+  top: .2rem;
+  font-size: 1rem;
+}
+
+.rightSection{
+  position: relative;
+  top: 3rem;
+}
+
+.scrollDown{
+  position: relative;
+  left: 50%;
+  top: -1rem;
+  width: 1.5rem;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.scrollDown:hover{
+  filter: brightness(200%);
+}
+
+@media screen and (max-width: 1300px) {
+  .hero{
+    margin-top: 5rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .hero{
+    margin-top: 8rem;
+  }
+
+  .rightSection{
+    object-fit: cover;
+  }
+}
+
+/* buy card sections */
+.songs{
+  margin-top: 5rem;
+  position: relative;
+  transform: translateX(-50%);
+  left: 50%;
+  width: 95%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.song{
+  margin-left: 2rem;
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.04);
+  width: 15rem;
+  backdrop-filter: blur(50px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.topImage{
+  position: relative;
+  top: -4.3rem;
+  cursor: pointer;
+}
+
+img.albumImage{
+  width: 15rem;
+  height: 12rem;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+.topImage .playArrow{
+  position: relative;
+  top: 10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  z-index: 100;
+}
+
+.artistNameSection{
+  margin: -3.5rem 1rem 0rem .5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.artistNameSection .spotifyLogo{
+  width: 2rem;
+  height: 2rem;
+}
+
+.artistName{
+  font-size: .8rem;
+  font-weight: 300;
+  color: #B5B5B5;
+  margin-left: .5rem;
+}
+
+
+.range-slider{
+  width: 92%;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.range { -webkit-appearance: none; width: 95%; margin-top: 2rem; border-radius: 50px;}
+.range:focus { outline: none; }
+
+.range::before { left: 0; content: attr(data-min); }
+.range::after { right: 0; content: attr(data-max); }
+
+.range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: .5rem;
+  cursor: pointer;
+  animate: 0.2s;
+  background: linear-gradient(90deg, #13AA9D var(--range-progress), #dee4ec var(--range-progress));
+  border-radius: 1rem;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: .3rem solid #13AA9D;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  height: 20px; width: 20px;
+  transform: translateY(calc(-50% + 4px));
+}
+
+.tooltip {
+  position: absolute;
+  top: -1rem;
+}
+.tooltip span {
+  position: absolute;
+  text-align: center;
+  display: block;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+  color: #fff;
+  border-radius: 0.25rem;
+  background: #133B37;
+  font-size: .8rem;
+  margin-left: -0.3rem;
+  transform: translate(-50%, 0);
+}
+.tooltip span:before {
+  position: absolute;
+  content: "";
+  left: 50%; bottom: -29px;
+  transform: translateX(-50%);
+  width: 0; height: 0;
+  border: 15px solid transparent;
+  border-top-color: #133B37;
+}
+
+.buyRoyalityPoints{
+  padding: 1rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  background: linear-gradient(94.44deg, #13AA9D -12.02%, rgba(7, 108, 99, 0.48) 105.01%);
+}
+
+.buyRoyalityPoints span{
+  position: relative;
+  top: .1rem;
+  font-size: .8rem;
+}
