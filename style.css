@@ -8,6 +8,7 @@
 
 body {
   background: #050505;
+  overflow-x: hidden;
 }
 
 button{
@@ -42,6 +43,13 @@ a {
   transform: translateX(-50%);
   margin-top: 1.5rem;
 }
+
+.nav .hamburger{
+  font-size: 2rem;
+  margin-top: .5rem;
+  display: none;
+}
+
 .nav .logo {
   width: 9rem;
   cursor: pointer;
@@ -163,14 +171,16 @@ a {
 }
 
 /* buy card sections */
+.viewAllSongs{
+  display: none;
+}
 .songs{
   margin-top: 5rem;
   position: relative;
-  transform: translateX(-50%);
-  left: 50%;
-  width: 95%;
+  left: -2rem;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -201,7 +211,7 @@ img.albumImage{
 
 .topImage .playArrow{
   position: relative;
-  top: 10rem;
+  top: 9rem;
   left: 50%;
   transform: translateX(-50%);
   width: 4rem;
@@ -299,4 +309,173 @@ img.albumImage{
   position: relative;
   top: .1rem;
   font-size: .8rem;
+}
+
+.howWeWork{
+  margin-top: 15rem;
+}
+
+.heading{
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.subtext{
+  text-align: center;
+  font-weight: 200;
+  font-size: 1rem;
+  color: #B5B5B5;
+}
+
+/* How we work section */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 850px) {
+    .nav{
+      margin-top: 1rem;  
+    }
+
+    .nav .navContent, .connectWallet{
+      display: none;
+    }
+
+    .nav .hamburger{
+      display: block;
+      cursor: pointer;
+    }
+
+    .scrollDown{
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .hero{
+      margin-top: 2rem;
+      flex-direction: column-reverse;
+      gap: 10rem;
+    }
+
+    .hero .rightSection{
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 55%;
+    }
+
+    .hero .leftSection .content h1{
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    .hero .leftSection .content h3{
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .hero .leftSection .content button{
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 3rem;
+    } 
+    
+    .songs{
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 30rem;
+      overflow: hidden;
+      margin-top: -2rem;
+    }
+
+    .song{
+      display: inline-block;
+      transform: scale(85%);
+      margin-left: -1rem;
+    }
+
+    .song button{
+      width: 100%;
+    }
+    
+    .viewAllSongs{
+      display: block;
+      text-align: right;
+      width: 95%;
+      font-weight: 300;
+      opacity: .8;
+      cursor: pointer;
+    }
+
+    .viewAllSongs span{
+      font-size: .8rem;
+    }
+}
+
+@media screen and (max-width: 690px) {
+  .song{
+    transform: scale(75%);
+    margin-left: -2rem;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .hero{
+    gap: 8rem;  
+  }
+
+  .hero .rightSection{
+    width: 75% !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .hero{
+    margin-top: 0;
+    gap: 10rem;  
+  }
+
+  .hero .rightSection{
+    width: 100% !important;
+  }
+
+  .hero .leftSection .content h1{
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .hero{
+    margin-top: 0;
+    gap: 12rem;  
+  }
+
+  .hero .rightSection{
+    width: 100%;
+    min-width: 250px;
+  }
+
+  .hero .leftSection .content h1{
+    font-size: 2.5rem;
+  }
 }
