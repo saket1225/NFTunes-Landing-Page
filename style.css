@@ -419,6 +419,69 @@ input[type=radio] {
   overflow: hidden;
 }
 
+.whoAreWe{
+  margin-top: 35rem;
+  margin-bottom: -70rem;
+}
+
+.card2 {
+  position: absolute;
+  width: 40rem;
+  height: 15rem;
+  left: 0;
+  right: 0;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.container2 {
+  position: relative;
+  transform: translateX(-50%);
+  left: 55%;
+  width: 100%;
+  max-width: 800px;
+  max-height: 600px;
+  height: 100%;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.cards2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+.container2 .cards2 label img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+#item2-1:checked ~ .cards2 #song2-1, #item2-2:checked ~ .cards2 #song2-2, #item2-3:checked ~ .cards2 #song2-3{
+  transform: translatex(0) scale(1.1);
+  opacity: 1;
+  z-index: 1;
+}
+
+#item2-1:checked ~ .cards2 #song2-2, #item2-2:checked ~ .cards2 #song2-3, #item2-3:checked ~ .cards2 #song2-1{
+  transform: translatex(110%) scale(0.8);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+#item2-1:checked ~ .cards2 #song2-3, #item2-2:checked ~ .cards2 #song2-1, #item2-3:checked ~ .cards2 #song2-2{
+  transform: translatex(-110%) scale(0.7);
+  opacity: 0.4;
+  z-index: 0;
+}
+
 /* footer */
 .footer{
   position: relative;
