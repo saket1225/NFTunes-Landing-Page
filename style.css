@@ -30,6 +30,7 @@ a {
   top: 0;
   position: absolute;
   width: 100%;
+  height: var(--glow-height);
   z-index: -1;
 }
 
@@ -180,18 +181,16 @@ a {
 }
 
 .songs{
-  margin-top: 1rem;
+  margin-top: 3rem;
   position: relative;
-  left: -2rem;
   width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 3rem;
 }
 
 .song{
-  margin-left: 2rem;
-  margin-top: 2rem;
   background: rgba(255, 255, 255, 0.04);
   width: 15rem;
   backdrop-filter: blur(50px);
@@ -203,7 +202,6 @@ a {
 
 .topImage{
   position: relative;
-  top: -4.3rem;
   cursor: pointer;
 }
 
@@ -212,11 +210,12 @@ img.albumImage{
   height: 12rem;
   object-fit: cover;
   filter: brightness(0.5);
+  margin-top: -5rem;
 }
 
 .topImage .playArrow{
   position: relative;
-  top: 9rem;
+  top: 4rem;
   left: 50%;
   transform: translateX(-50%);
   width: 4rem;
@@ -224,7 +223,7 @@ img.albumImage{
 }
 
 .artistNameSection{
-  margin: -3.5rem 1rem 0rem .5rem;
+  margin: 1rem 1rem 0rem .5rem;
   display: flex;
   justify-content: space-between;
 }
@@ -392,13 +391,13 @@ input[type=radio] {
 }
 
 #item-1:checked ~ .cards #song-3, #item-2:checked ~ .cards #song-4, #item-3:checked ~ .cards #song-5, #item-4:checked ~ .cards #song-1, #item-5:checked ~ .cards #song-2 {
-  transform: translatex(160%) scale(0.8);
+  transform: translatex(210%) scale(0.8);
   opacity: 0.4;
   z-index: 0;
 }
 
 #item-1:checked ~ .cards #song-4, #item-2:checked ~ .cards #song-5, #item-3:checked ~ .cards #song-1, #item-4:checked ~ .cards #song-2, #item-5:checked ~ .cards #song-3 {
-  transform: translatex(-160%) scale(0.8);
+  transform: translatex(-210%) scale(0.8);
   opacity: 0.4;
   z-index: 0;
 }
@@ -619,51 +618,108 @@ input[type=radio] {
       left: 50%;
       transform: translateX(-50%);
       margin-top: 3rem;
-    } 
-
-    .allSongsSection{
-      margin-top: 5rem;
-      background: rebeccapurple;
-    }
-    
-    .songs{
-      display: flex;
-      justify-content: space-around;
-      width: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      height: 30rem;
-      overflow: hidden;
     }
 
-    .song{
-      display: inline-block;
-      transform: scale(85%);
-      margin-left: -1rem;
-    }
-
-    .song button{
-      width: 100%;
-    }
-    
     .viewAllSongs{
       display: block;
       text-align: right;
-      width: 95%;
+      margin-top: 3rem;
+      width: 92%;
+      font-size: 1rem;
       font-weight: 300;
-      opacity: .8;
+      opacity: .7;
+      transition: .2s all;
       cursor: pointer;
     }
 
     .viewAllSongs span{
-      font-size: .8rem;
+      font-size: .7rem;
     }
+
+    .viewAllSongs:hover{
+      opacity: 1;
+    }
+
+    .songs{
+      height: 25rem;
+      overflow: hidden;
+      gap: .5rem;
+      margin-top: 0;
+    }
+
+    .song{
+      transform: scale(80%);
+    }
+}
+
+@media screen and (max-width: 835px) {
+  .heading{
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .subtext{
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .songs{
+    height: 30rem;
+    overflow: hidden;
+    gap: 0rem;
+  }
+
+  .song{
+    transform: scale(70%);
+  }
+}
+
+@media screen and (max-width: 737px) {
+
+  .song{
+    margin-left: -1rem;
+  }
 }
 
 @media screen and (max-width: 690px) {
   .song{
-    transform: scale(75%);
     margin-left: -2rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .songs{
+    position: relative;
+    left: 2rem;
+  }
+
+  .song{
+    margin-left: -4rem;
+    transform: scale(60%);
+  }
+}
+
+@media screen and (max-width: 545px) {
+  .songs{
+    position: relative;
+    left: 2rem;
+  }
+
+  .song{
+    margin-left: -5rem;
+    transform: scale(60%);
+  }
+}
+
+@media screen and (max-width: 337px) {
+  .songs{
+    position: relative;
+    left: 3rem;
+  }
+
+  .song{
+    margin-left: -7rem;
+    transform: scale(40%);
   }
 }
 

@@ -303,6 +303,14 @@
         };
         document.addEventListener("DOMContentLoaded", setValue);
         range.addEventListener('input', setValue);
+
+        // glowMaxHeight
+        let footer = document.querySelector(".footer")
+        let glow = document.querySelector(".glow")
+
+        footerPosition = footer.offsetTop;
+        
+        glow.style.height = `${footerPosition + 730}px`
     </script>
     <!-- hero section ends -->
 </body>
