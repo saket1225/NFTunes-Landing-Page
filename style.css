@@ -34,6 +34,15 @@ a {
   z-index: -1;
 }
 
+.mobileNav .closeButton{
+  position: relative;
+  float: right;
+  margin-right: 2.5rem;
+  margin-top: 1.6rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
 .nav {
   position: relative;
   display: flex;
@@ -42,7 +51,7 @@ a {
   width: 90%;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .nav .hamburger{
@@ -88,10 +97,97 @@ a {
   transition: 0.3s;
   font-weight: 500;
 }
+
 .nav .connectWallet:hover {
   background: #29B1A5;
   color: white;
 }
+
+.mobileNav{
+  margin-top: -4.2rem;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  animation: navAnimation .7s forwards;
+  background: rgba(10, 25, 24, 1);
+  display: none;
+  z-index: 1;
+}
+
+.mobileNavClosingAnimation{
+  animation: closingAnimationNav .7s forwards;
+}
+
+@keyframes navAnimation {
+  0%   {top: -100vh;}
+  100% {top: 4rem;}
+}
+
+@keyframes closingAnimationNav {
+  0%   {top: 4rem;}
+  100% {top: -100vh;}
+}
+
+@supports (backdrop-filter: blur(75px)) {
+  .mobileNav{
+    background: rgba(10, 25, 24, 0.5);
+    backdrop-filter: blur(75px);
+  }
+}
+
+.activeMobileNav{
+  display: none;
+}
+
+.mobileNav .navContent{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+  font-size: 1.2rem;
+  width: 90%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.navContent .active{
+  font-weight: 600;
+  color: #fff;
+  transition: .2s;
+}
+
+.navContent .active:hover{
+  color: #b5b5b5;
+}
+
+.navContent .navLink{
+  transition: .2s;
+}
+
+.navContent .navLink:hover{
+  color: #fff;
+}
+
+.mobileConnectWallet{
+  padding: .5rem 2rem;
+  font-size: 1rem;
+  background: none;
+  border: 2px solid #29B1A5;
+  border-radius: 2px;
+  color: #29B1A5;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+  display: block;
+}
+
+.mobileConnectWallet:hover {
+  background: #29B1A5;
+  color: white;
+}
+
 
 .hero {
   position: relative;
@@ -720,6 +816,11 @@ input[type=radio] {
     .nav .hamburger{
       display: block;
       cursor: pointer;
+    }
+
+    
+    .activeMobileNav{
+      display: block;
     }
 
     .scrollDown{

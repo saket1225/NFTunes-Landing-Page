@@ -24,17 +24,31 @@
         <img class="logo" src="image/logo.png" alt=""> <!--logo-->
         
         <!--Nav Links-->
-        <div class="navContent">
-            <a href="" class="navLink active">How We Work</a>
-            <a href="" class="navLink">Who We Are</a>
-            <a href="" class="navLink">Contact Us</a>
-        </div>
+            <div class="navContent">
+                <a href="" class="navLink active">How We Work</a>
+                <a href="" class="navLink">Who We Are</a>
+                <a href="" class="navLink">Contact Us</a>
+            </div>
 
-        <button class="connectWallet">Join Us</button> <!-- Connect Wallet -->
+            <button class="connectWallet">Join Us</button> <!-- Connect Wallet -->
 
         <span class="material-symbols-rounded hamburger">
             menu
         </span>
+    </div>
+
+    <div class="mobileNav">
+        <span class="material-symbols-rounded closeButton">
+            close
+        </span>
+
+        <div class="navContent">
+            <a href="" class="navLink active">Home</a>
+            <a href="" class="navLink">How We Work</a>
+            <a href="" class="navLink">Who We Are</a>
+            <a href="" class="navLink">Contact Us</a>
+            <button class="mobileConnectWallet">Join Us</button>
+        </div>
     </div>
     <!-- top nav ends -->
 
@@ -305,19 +319,40 @@
         document.addEventListener("DOMContentLoaded", setValue);
         range.addEventListener('input', setValue);
 
-    // glowMaxHeight
-    let footer = document.querySelector(".footer")
-    let glow = document.querySelector(".glow")
+        // glowMaxHeight
+        let footer = document.querySelector(".footer")
+        let glow = document.querySelector(".glow")
 
-    window.addEventListener('load', () => {
-        footerPosition = footer.offsetTop;    
-        glow.style.height = `${footerPosition + 240}px`
-    })
+        window.addEventListener('load', () => {
+            footerPosition = footer.offsetTop;    
+            glow.style.height = `${footerPosition + 240}px`
+        })
 
-    window.addEventListener('resize', () => {
-        footerPosition = footer.offsetTop;    
-        glow.style.height = `${footerPosition + 240}px`
-    })
+        window.addEventListener('resize', () => {
+            footerPosition = footer.offsetTop;    
+            glow.style.height = `${footerPosition + 240}px`
+        })
+
+        // hamburger
+        let hamburger = document.querySelector(".hamburger");
+        let menu = document.querySelector('.mobileNav')
+        let closeButton = document.querySelector('.closeButton')
+        let menuOpen = false;
+
+        hamburger.addEventListener('click', () => {
+            menuOpen = !menuOpen
+            menu.classList.toggle('activeMobileNav')
+        })
+
+        closeButton.addEventListener('click', () => {
+            menu.classList.toggle('mobileNavClosingAnimation')
+
+            setTimeout(() => {
+                menuOpen = !menuOpen
+                menu.classList.toggle('activeMobileNav')
+                menu.classList.toggle('mobileNavClosingAnimation')
+            }, 1000)
+        })
     </script>
 </body>
 </html>
