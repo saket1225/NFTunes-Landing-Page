@@ -289,7 +289,8 @@
 
     </div>
 
-    <script>    
+    <script>   
+     
     const
         range = document.querySelector('.range'),
         tooltip = document.querySelector('.tooltip'),
@@ -304,14 +305,19 @@
         document.addEventListener("DOMContentLoaded", setValue);
         range.addEventListener('input', setValue);
 
-        // glowMaxHeight
-        let footer = document.querySelector(".footer")
-        let glow = document.querySelector(".glow")
+    // glowMaxHeight
+    let footer = document.querySelector(".footer")
+    let glow = document.querySelector(".glow")
 
-        footerPosition = footer.offsetTop;
-        
-        glow.style.height = `${footerPosition + 720}px`
+    window.addEventListener('load', () => {
+        footerPosition = footer.offsetTop;    
+        glow.style.height = `${footerPosition + 240}px`
+    })
+
+    window.addEventListener('resize', () => {
+        footerPosition = footer.offsetTop;    
+        glow.style.height = `${footerPosition + 240}px`
+    })
     </script>
-    <!-- hero section ends -->
 </body>
 </html>
