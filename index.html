@@ -213,29 +213,31 @@
             <h5 class="subtext">Below you can understand the process we work in.</h5>
         </div>
 
-        <div class="container">
-            <input type="radio" name="slider" id="item-1" checked>
-            <input type="radio" name="slider" id="item-2">
-            <input type="radio" name="slider" id="item-3">
-            <input type="radio" name="slider" id="item-4">
-            <input type="radio" name="slider" id="item-5">
-          <div class="cards">
-            <label class="card" for="item-1" id="song-1">
-              <img src="image/step1.svg" alt="song">
-            </label>
-            <label class="card" for="item-2" id="song-2">
-              <img src="image/step2.svg" alt="song">
-            </label>
-            <label class="card" for="item-3" id="song-3">
-              <img src="image/step3.svg" alt="song">
-            </label>
-            <label class="card" for="item-4" id="song-4">
-              <img src="image/step4.svg" alt="song">
-            </label>
-            <label class="card" for="item-5" id="song-5">
-              <img src="image/step5.svg" alt="song">
-            </label>
-          </div>
+        <div class="overFlowContainer">
+            <div class="container">
+                <input type="radio" name="slider" id="item-1" checked>
+                <input type="radio" name="slider" id="item-2">
+                <input type="radio" name="slider" id="item-3">
+                <input type="radio" name="slider" id="item-4">
+                <input type="radio" name="slider" id="item-5">
+            <div class="cards">
+                <label class="card" for="item-1" id="song-1">
+                <img src="image/step1.svg" alt="song">
+                </label>
+                <label class="card" for="item-2" id="song-2">
+                <img src="image/step2.svg" alt="song">
+                </label>
+                <label class="card" for="item-3" id="song-3">
+                <img src="image/step3.svg" alt="song">
+                </label>
+                <label class="card" for="item-4" id="song-4">
+                <img src="image/step4.svg" alt="song">
+                </label>
+                <label class="card" for="item-5" id="song-5">
+                <img src="image/step5.svg" alt="song">
+                </label>
+            </div>
+            </div>
         </div>
     </div>
 
@@ -245,21 +247,23 @@
             <h5 class="subtext">Meet the team.</h5>
         </div>
 
-        <div class="container2">
-            <input type="radio" name="slider2" id="item2-1" checked>
-            <input type="radio" name="slider2" id="item2-2">
-            <input type="radio" name="slider2" id="item2-3">
-          <div class="cards2">
-            <label class="card2" for="item2-1" id="song2-1">
-              <img src="image/cust1.svg" alt="song">
-            </label>
-            <label class="card2" for="item2-2" id="song2-2">
-              <img src="image/cust2.svg" alt="song">
-            </label>
-            <label class="card2" for="item2-3" id="song2-3">
-              <img src="image/cust3.svg" alt="song">
-            </label>
-          </div>
+        <div class="overFlowContainer">
+            <div class="container2">
+                <input type="radio" name="slider2" id="item2-1" checked>
+                <input type="radio" name="slider2" id="item2-2">
+                <input type="radio" name="slider2" id="item2-3">
+            <div class="cards2">
+                <label class="card2" for="item2-1" id="song2-1">
+                <img src="image/cust1.svg" alt="song">
+                </label>
+                <label class="card2" for="item2-2" id="song2-2">
+                <img src="image/cust2.svg" alt="song">
+                </label>
+                <label class="card2" for="item2-3" id="song2-3">
+                <img src="image/cust3.svg" alt="song">
+                </label>
+            </div>
+            </div>
         </div>
     </div>
 
@@ -369,25 +373,27 @@
             if(screen.width > 700){
                 footerPosition = footer.offsetTop;
                 glow.style.height = `${footerPosition + 240}px`
-                console.log(screen.width)
-                return;
             }
         })
 
         window.addEventListener('resize', () => {
             if(screen.width > 700){
-                footerPosition = footer.offsetTop;    
+                footerPosition = footer.offsetTop;
                 glow.style.height = `${footerPosition + 240}px`
-                return;
             }
         })
 
         window.addEventListener('load', () => {
             if(screen.width < 700){
-                console.log('mrrfemd')
                 footerMobilePosition = footerMobile.offsetTop;
-                glow.style.height = `${footerMobilePosition + 498}px`
-                return;
+                glow.style.height = `${footerMobilePosition + 499}px`
+            }
+        })
+
+        window.addEventListener('resize', () => {
+            if(screen.width < 700){
+                footerMobilePosition = footerMobile.offsetTop;
+                glow.style.height = `${footerMobilePosition + 499}px`
             }
         })
 
