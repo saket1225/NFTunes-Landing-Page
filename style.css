@@ -817,6 +817,10 @@ input[type=radio] {
 
 
 @media screen and (max-width: 850px) {
+    .footer{
+      top: 65rem;
+    }
+
     .howWeWork{
       margin-top: 5rem;
     }
@@ -1018,6 +1022,13 @@ input[type=radio] {
   }
 }
 
+@media screen and (max-width: 550px) {
+  .whoAreWe{
+    position: relative;
+    top: -5rem;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .whoAreWe{
     margin-top: -10rem;
@@ -1143,7 +1154,7 @@ input[type=radio] {
   .footerMobile{
     display: block;
     position: relative;
-    top: 70rem;
+    top: 60rem;
     width: 100%;
     background: rgba(16, 153, 141, 0.15);
   }
@@ -1239,5 +1250,17 @@ input[type=radio] {
     font-weight: 200;
     text-align: center;
     margin-bottom: 2rem;
+  }
+
+  .whoAreWe{
+    margin-top: -5rem;
+  }
+
+  .container{
+    margin-top: -2rem;
+  }
+
+  .container2{
+    margin-top: -2rem;
   }
 }
