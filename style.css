@@ -54,17 +54,6 @@ img, svg{
   background: rgba(16, 153, 141, .8);
 }
 
-@keyframes changeColor{
-  0%{
-    background: rgba(16, 153, 141, 0);
-  }
-
-  100%{
-    background: rgba(16, 153, 141, 1);
-  }
-}
-
-
 
 button{
   outline: none;
@@ -74,60 +63,6 @@ button{
 a {
   color: #B5B5B5;
   text-decoration: none;
-}
-
-.entireWebsite{
-  opacity: 0;
-  animation: showWebsite .5s .7s forwards;
-}
-
-@keyframes showWebsite{
-  0%{
-    opacity: 0%;
-  }
-
-  100%{
-    opacity: 100%;
-  }
-}
-
-@keyframes hideLoading{
-  0%{
-    display: block;
-  }
-
-  85%{
-    opacity: 100%;
-  }
-
-  100%{
-    opacity: 0%;
-  }
-}
-
-.entireLoader{
-  position: absolute;
-  animation: hideLoading 1s forwards;
-}
-
-.glowLoading{
-  position: absolute;
-  width: 35rem;
-  height: 35rem;
-  border-radius: 50%;
-  background: #133A37;
-  filter: blur(200px);
-  opacity: .7;
-}
-
-.one{
-  left: -15%;
-  top: -20%;
-}
-
-.two{
-  right: -15%;
-  top: 65%;
 }
 
 
@@ -169,6 +104,20 @@ a {
   left: 50%;
   transform: translateX(-50%);
   margin-top: 1rem;
+  opacity: 0;
+  animation: navStartAnimation 1s .4s forwards;
+}
+
+@keyframes navStartAnimation{
+  0%{
+    top: -4rem;
+    opacity: 0;
+  }
+
+  100%{
+    top: 0;
+    opacity: 1;
+  }
 }
 
 .nav .hamburger{
@@ -248,7 +197,7 @@ a {
 @supports (backdrop-filter: blur(75px)) {
   .mobileNav{
     background: rgba(10, 25, 24, 0.5);
-    backdrop-filter: blur(75px);
+    backdrop-filter: blur(125px);
   }
 }
 
@@ -319,6 +268,31 @@ a {
   width: 50%;
 }
 
+@media screen and (min-width: 850px) {
+  .rightSection{  
+    animation: rightSectionAnimation 1s 1s forwards;
+    opacity: 0;
+  }
+}
+
+@keyframes rightSectionAnimation{
+  0%{
+    left: 5rem;
+    opacity: 0;
+  }
+
+  100%{
+    left: 0;
+    opacity: 1;
+  }
+}
+
+
+.leftSection{
+  animation: leftSectionAnimation 1s .75s forwards;
+  opacity: 0;
+}
+
 .leftSection .content{
   position: relative;
   top: 50%;
@@ -350,6 +324,18 @@ a {
   font-size: 1rem;
 }
 
+@keyframes leftSectionAnimation{
+  0%{
+    margin-left: -5rem;
+    opacity: 0;
+  }
+
+  100%{
+    margin-left: 0;
+    opacity: 1;
+  }
+}
+
 .rightSection{
   position: relative;
   top: 3rem;
@@ -357,11 +343,25 @@ a {
 
 .scrollDown{
   position: relative;
-  left: 50%;
+  left: 47%;
   top: -1rem;
   width: 1.5rem;
   cursor: pointer;
   transition: .3s;
+  animation: scrollDownAnimation 1s 1s forwards;
+  opacity: 0;
+}
+
+@keyframes scrollDownAnimation{
+  0%{
+    top: 3rem;
+    opacity: 0;
+  }
+
+  100%{
+    bottom: 0;
+    opacity: 1;
+  }
 }
 
 .scrollDown:hover{
@@ -981,7 +981,22 @@ input[type=radio] {
       left: 50%;
       transform: translateX(-50%);
       width: 55%;
+      opacity: 0;
+      animation: rightSectionAnimationResponsive 1s 1s forwards;
     }
+
+    @keyframes rightSectionAnimationResponsive{
+      0%{
+        top: -2rem;
+        opacity: 0;
+      }
+    
+      100%{
+        top: 2rem;
+        opacity: 1;
+      }
+    }
+    
 
     .hero .leftSection .content h1{
       font-size: 3rem;
@@ -1380,74 +1395,5 @@ input[type=radio] {
 
   .container2{
     margin-top: -2rem;
-  }
-}
-
-/* loader */
-.loader {
-  --path: #133A37;
-  --dot: #29B1A5;
-  --duration: 3s;
-  width: 44px;
-  height: 44px;
-  position: relative;
-}
-.loader:before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  position: absolute;
-  display: block;
-  background: var(--dot);
-  top: 37px;
-  left: 19px;
-  transform: translate(-18px, -18px);
-  animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
-}
-.loader svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.loader svg circle {
-  fill: none;
-  stroke: var(--path);
-  stroke-width: 10px;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-}
-.loader svg circle {
-  stroke-dasharray: 150 50 150 50;
-  stroke-dashoffset: 75;
-  animation: pathCircle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
-}
-
-@keyframes dotRect {
-  25% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(18px, -18px);
-  }
-  75% {
-    transform: translate(0, -36px);
-  }
-  100% {
-    transform: translate(-18px, -18px);
-  }
-}
-@keyframes pathCircle {
-  25% {
-    stroke-dashoffset: 125;
-  }
-  50% {
-    stroke-dashoffset: 175;
-  }
-  75% {
-    stroke-dashoffset: 225;
-  }
-  100% {
-    stroke-dashoffset: 275;
   }
 }
