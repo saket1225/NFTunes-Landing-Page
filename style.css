@@ -6,10 +6,28 @@
   color: #fff;
 }
 
+html{
+  scroll-snap-type: y mandatory;
+}
+
 body{
   background: #050505;
   overflow-x: hidden;
 }
+
+section {
+  z-index: -1;
+  block-size: 100vh;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+section .mainContainer{
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
 
 img, svg{
   -webkit-touch-callout: none;
@@ -96,16 +114,19 @@ a {
 }
 
 .nav {
-  position: relative;
+  background: rgba(10, 25, 24, 0.7);
+  position: fixed;
+  z-index: 100;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 90%;
+  width: 100%;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 1rem;
   opacity: 0;
   animation: navStartAnimation 1s .4s forwards;
+  padding: .5rem;
+  backdrop-filter: blur(15px);
 }
 
 @keyframes navStartAnimation{
@@ -152,7 +173,6 @@ a {
 }
 .nav .connectWallet {
   position: relative;
-  top: 0.5rem;
   padding: 0 2rem;
   font-size: 1rem;
   background: none;
@@ -162,6 +182,8 @@ a {
   cursor: pointer;
   transition: 0.3s;
   font-weight: 500;
+  height: 2.5rem;
+  top: .5rem;
 }
 
 .nav .connectWallet:hover {
@@ -259,8 +281,7 @@ a {
   position: relative;
   display: flex;
   width: 90%;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 5%;
   gap: 5rem;
 }
 
