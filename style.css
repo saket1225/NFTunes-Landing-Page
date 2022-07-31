@@ -6,26 +6,10 @@
   color: #fff;
 }
 
-html{
-  scroll-snap-type: y mandatory;
-}
 
 body{
   background: #050505;
   overflow-x: hidden;
-}
-
-section {
-  z-index: -1;
-  block-size: 100vh;
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
-}
-
-section .mainContainer{
-  position: relative;
-  top: 50%;
-  transform: translate(0, -50%);
 }
 
 
@@ -114,9 +98,9 @@ a {
 }
 
 .nav {
+  z-index: 10;
   background: rgba(10, 25, 24, 0.7);
   position: fixed;
-  z-index: 100;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -125,7 +109,7 @@ a {
   transform: translateX(-50%);
   opacity: 0;
   animation: navStartAnimation 1s .4s forwards;
-  padding: .5rem;
+  padding: .8rem 2rem;
   backdrop-filter: blur(15px);
 }
 
@@ -279,6 +263,7 @@ a {
 
 .hero {
   position: relative;
+  top: 3rem;
   display: flex;
   width: 90%;
   left: 5%;
@@ -549,7 +534,7 @@ img.albumImage{
 
 /* How we work section */
 .howWeWork{
-  margin-top: 15rem;
+  margin-top: 10rem;
 }
 
 .heading{
@@ -655,7 +640,6 @@ input[type=radio] {
 }
 
 .whoAreWe{
-  margin-top: 10rem;
   margin-bottom: -70rem;
 }
 
@@ -965,10 +949,6 @@ input[type=radio] {
       margin-top: -2rem;
     }
 
-    .nav{
-      margin-top: 1rem;  
-    }
-
     .nav .navContent, .connectWallet{
       display: none;
     }
@@ -980,6 +960,7 @@ input[type=radio] {
 
     
     .activeMobileNav{
+      z-index: 1000;
       display: block;
     }
 
@@ -1111,6 +1092,11 @@ input[type=radio] {
   .whoAreWe{
     position: relative;
     top: -5rem;
+  }
+
+  .footerMobile{
+    position: relative;
+    top: 50rem !important;
   }
 }
 
