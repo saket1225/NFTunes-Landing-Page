@@ -456,6 +456,24 @@ img.albumImage{
   margin-left: .5rem;
 }
 
+.rangeData{
+  width: calc(100% - 5px);
+  color: #13AA9D;
+  border: 1px solid #12312F;
+  border-radius: 5px;
+  padding: 0.5rem 2rem;
+  text-align: center;
+}
+
+.coloredDiv{
+  position: absolute;
+  top: 4.5rem;
+  width: 0%;
+  height: .45rem;
+  border-radius: 50rem;
+  background: #13AA9D;
+  pointer-events: none;
+}
 
 .range-slider{
   width: 92%;
@@ -465,7 +483,7 @@ img.albumImage{
   margin-bottom: 1rem;
 }
 
-.range { -webkit-appearance: none; width: 95%; margin-top: 2rem; border-radius: 50px;}
+.range { -webkit-appearance: none; width: 95%; height: .2rem; margin-top: 2rem; border-radius: 50px; background: #123936;}
 .range:focus { outline: none; }
 
 .range::before { left: 0; content: attr(data-min); }

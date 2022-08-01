@@ -95,8 +95,9 @@
                     <h6 class="artistName">Ed Sherran</h6>
 
                     <div class="range-slider">
-                        <div class="tooltip"></div>
-                        <input class="range" type="range" step="2" value="60" min="0" max="100">
+                        <div class="coloredDiv coloredDivOne"></div>
+                        <div class="rangeData rangeDataOne">0 Share</div>
+                        <input class="range rangeOne" type="range" step="2" value="0" min="0" max="100">
                     </div>
 
                     <button class="buyRoyalityPoints">Buy Royality Points 
@@ -119,8 +120,9 @@
                     <h6 class="artistName">The Weekend</h6>
 
                     <div class="range-slider">
-                        <div class="tooltip"></div>
-                        <input class="range" type="range" step="2" value="60" min="0" max="100">
+                        <div class="rangeData rangeDataTwo">0 Share</div>
+                        <div class="coloredDiv coloredDivTwo"></div>
+                        <input class="range rangeTwo" type="range" step="2" value="0" min="0" max="100">
                     </div>
 
                     <button class="buyRoyalityPoints">Buy Royality Points 
@@ -143,8 +145,9 @@
                     <h6 class="artistName">Justin Bieber</h6>
 
                     <div class="range-slider">
-                        <div class="tooltip"></div>
-                        <input class="range" type="range" step="2" value="60" min="0" max="100">
+                        <div class="rangeData rangeDataThree">0 Share</div>
+                        <div class="coloredDiv coloredDivThree"></div>
+                        <input class="range rangeThree" type="range" step="1" value="0" min="0" max="100">
                     </div>
 
                     <button class="buyRoyalityPoints">Buy Royality Points 
@@ -167,8 +170,9 @@
                     <h6 class="artistName">One Direction</h6>
 
                     <div class="range-slider">
-                        <div class="tooltip"></div>
-                        <input class="range" type="range" step="2" value="60" min="0" max="100">
+                        <div class="coloredDiv coloredDivFour"></div>
+                        <div class="rangeData rangeDataFour">0 Share</div>
+                        <input class="range rangeFour" type="range" step="2" value="0" min="0" max="100">
                     </div>
 
                     <button class="buyRoyalityPoints">Buy Royality Points 
@@ -191,8 +195,9 @@
                     <h6 class="artistName">Bruno Mars</h6>
 
                     <div class="range-slider">
-                        <div class="tooltip"></div>
-                        <input class="range" type="range" step="2" value="60" min="0" max="100">
+                        <div class="rangeData rangeDataFive">0 Share</div>
+                        <div class="coloredDiv coloredDivFive"></div>
+                        <input class="range rangeFive" type="range" step="2" value="0" min="0" max="100">
                     </div>
 
                     <button class="buyRoyalityPoints">Buy Royality Points 
@@ -346,20 +351,6 @@
         </div>
 
     <script>   
-     
-    const
-        range = document.querySelector('.range'),
-        tooltip = document.querySelector('.tooltip'),
-        setValue = ()=>{
-            const
-                newValue = Number( (range.value - range.min) * 100 / (range.max - range.min) ),
-                newPosition = 16 - (newValue * 0.32);
-            tooltip.innerHTML = `<span>${range.value}</span>`;
-            tooltip.style.left = `calc(${newValue}% + (${newPosition}px))`;
-            document.documentElement.style.setProperty("--range-progress", `calc(${newValue}% + (${newPosition}px))`);
-        };
-        document.addEventListener("DOMContentLoaded", setValue);
-        range.addEventListener('input', setValue);
 
         // glowMaxHeight
         let footer = document.querySelector(".footer")
@@ -414,6 +405,104 @@
                 menu.classList.toggle('mobileNavClosingAnimation')
             }, 1000)
         })
-    </script>
+
+        //inputFeilds
+        const rangeOne = document.querySelector(".rangeOne")
+        const rangeTwo = document.querySelector(".rangeTwo")
+        const rangeThree = document.querySelector(".rangeThree")
+        const rangeFour = document.querySelector(".rangeFour")
+        const rangeFive = document.querySelector(".rangeFive")
+   
+        const rangeDataOne = document.querySelector(".rangeDataOne")
+        const rangeDataTwo = document.querySelector(".rangeDataTwo")
+        const rangeDataThree = document.querySelector(".rangeDataThree")
+        const rangeDataFour = document.querySelector(".rangeDataFour")
+        const rangeDataFive = document.querySelector(".rangeDataFive")
+
+        const coloredDivOne = document.querySelector(".coloredDivOne")
+        const coloredDivTwo = document.querySelector(".coloredDivTwo")
+        const coloredDivThree = document.querySelector(".coloredDivThree")
+        const coloredDivFour = document.querySelector(".coloredDivFour")
+        const coloredDivFive = document.querySelector(".coloredDivFive")
+
+            
+        rangeOne.oninput = function(){
+            rangeDataOne.textContent = `${rangeOne.value} Shares`;
+            if(rangeOne.value < 50){    
+                coloredDivOne.style.width = `${rangeOne.value}%`;
+            }
+
+            if(rangeOne.value == 100){
+                rangeDataOne.textContent = `${rangeOne.value} Shares (max)`;
+            }
+
+            else{    
+                coloredDivOne.style.width = `${rangeOne.value - 5}%`;
+            }
+        }
+
+        rangeTwo.oninput = function(){
+            rangeDataTwo.textContent = `${rangeTwo.value} Shares`;
+            if(rangeTwo.value < 50){    
+                coloredDivTwo.style.width = `${rangeTwo.value}%`;
+            }
+
+            if(rangeTwo.value == 100){
+                rangeDataTwo.textContent = `${rangeTwo.value} Shares (max)`;
+            }
+
+            else{    
+                coloredDivTwo.style.width = `${rangeTwo.value - 5}%`;
+            }
+        }
+        
+        rangeThree.oninput = function(){
+            rangeDataThree.textContent = `${rangeThree.value} Shares`;
+            if(rangeThree.value < 50){    
+                coloredDivThree.style.width = `${rangeThree.value}%`;
+            }
+
+            if(rangeThree.value == 100){
+                rangeDataThree.textContent = `${rangeThree.value} Shares (max)`;
+            }
+
+            else{    
+                coloredDivThree.style.width = `${rangeThree.value - 5}%`;
+            }
+        }
+
+        rangeFour.oninput = function(){
+            rangeDataFour.textContent = `${rangeFour.value} Shares`;
+            if(rangeFour.value < 50){    
+                coloredDivFour.style.width = `${rangeFour.value}%`;
+            }
+
+            if(rangeFour.value == 100){
+                rangeDataFour.textContent = `${rangeFour.value} Shares (max)`;
+            }
+
+            else{    
+                coloredDivFour.style.width = `${rangeFour.value - 5}%`;
+            }
+        }
+        
+        rangeFive.oninput = function(){
+            rangeDataFive.textContent = `${rangeFive.value} Shares`;
+            if(rangeFive.value < 50){    
+                coloredDivFive.style.width = `${rangeFive.value}%`;
+            }
+
+            if(rangeFive.value == 100){
+                rangeDataFive.textContent = `${rangeFive.value} Shares (max)`;
+            }
+
+            else{    
+                coloredDivFive.style.width = `${rangeFive.value - 5}%`;
+            }
+        }
+
+
+        
+        </script>
 </body>
 </html>
