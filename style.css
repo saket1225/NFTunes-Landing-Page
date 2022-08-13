@@ -6,6 +6,9 @@
   color: #fff;
 }
 
+html{
+  scroll-behavior: smooth;
+}
 
 body{
   background: #050505;
@@ -100,7 +103,7 @@ a {
 .nav {
   z-index: 10;
   background: rgba(10, 25, 24, 0.7);
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -321,7 +324,13 @@ a {
   font-size: 1rem;
   padding: .75rem 2rem;
   margin-top: 2rem;
+  opacity: 0.8;
   cursor: pointer;
+  transition: 0.5s;
+}
+
+.leftSection .content button:hover{
+  opacity: 1;
 }
 
 .leftSection .content button span{
@@ -540,7 +549,13 @@ img.albumImage{
   margin-top: 1rem;
   font-size: 1rem;
   cursor: pointer;
+  opacity: 0.8;
+  transition: 0.5s;
   background: linear-gradient(94.44deg, #13AA9D -12.02%, rgba(7, 108, 99, 0.48) 105.01%);
+}
+
+.buyRoyalityPoints:hover{
+  opacity: 1;
 }
 
 .buyRoyalityPoints span{
@@ -553,6 +568,96 @@ img.albumImage{
 /* How we work section */
 .howWeWork{
   margin-top: 10rem;
+}
+
+.howWeWork .buttonsDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  top: 20rem;
+  z-index: 2;
+  width: 100%;
+  height: 5rem;
+  pointer-events: none;
+}
+
+.howWeWork .buttonsDiv .button{
+  margin: 0 10%;
+  width: 4rem;
+  height: 4rem;
+  background-color: rgba(20, 81, 75, 1);
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 10px;
+  display: grid;
+  place-content: center;
+}
+
+.howWeWork .buttonsDiv .button:nth-child(1){
+  transform: rotate(180deg);
+}
+
+.howWeWork .buttonsDiv .button .arrow{
+  color: #13AA9D;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.howWeWork .buttonsDiv .button:hover{
+  background-color: rgb(25, 100, 93);
+}
+
+@supports (backdrop-filter: blur(75px)) {
+  .howWeWork .buttonsDiv .button{
+    background-color: rgba(20, 81, 75, .75);
+    backdrop-filter: blur(75px);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .howWeWork .buttonsDiv{
+    top: 17rem;
+  }
+
+  .howWeWork .buttonsDiv .button{
+    margin: 0 4%;
+    transform: scale(.6);
+  }
+
+  .howWeWork .buttonsDiv .button:nth-child(1){
+    transform: scale(.6) rotate(180deg);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .howWeWork .buttonsDiv{
+    top: 13rem;
+  }
+
+  .howWeWork .buttonsDiv .button{
+    margin: 0 1%;
+    transform: scale(.55);
+  }
+
+  .howWeWork .buttonsDiv .button:nth-child(1){
+    transform: scale(.55) rotate(180deg);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .howWeWork .buttonsDiv{
+    top: 13.5rem;
+  }
+
+  .howWeWork .buttonsDiv .button{
+    margin: 0 0%;
+    transform: scale(.35);
+  }
+
+  .howWeWork .buttonsDiv .button:nth-child(1){
+    transform: scale(.35) rotate(180deg);
+  }
 }
 
 .heading{
@@ -660,6 +765,98 @@ input[type=radio] {
 .whoAreWe{
   margin-bottom: -70rem;
 }
+
+
+.whoAreWe .buttonsDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  top: 20rem;
+  z-index: 2;
+  width: 100%;
+  height: 5rem;
+  pointer-events: none;
+}
+
+.whoAreWe .buttonsDiv .button{
+  margin: 0 10%;
+  width: 4rem;
+  height: 4rem;
+  background-color: rgba(20, 81, 75, 1);
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 10px;
+  display: grid;
+  place-content: center;
+}
+
+.whoAreWe .buttonsDiv .button:nth-child(1){
+  transform: rotate(180deg);
+}
+
+.whoAreWe .buttonsDiv .button .arrow{
+  color: #13AA9D;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.whoAreWe .buttonsDiv .button:hover{
+  background-color: rgb(25, 100, 93);
+}
+
+@supports (backdrop-filter: blur(75px)) {
+  .whoAreWe .buttonsDiv .button{
+    background-color: rgba(20, 81, 75, .75);
+    backdrop-filter: blur(75px);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .whoAreWe .buttonsDiv{
+    top: 14.5rem;
+  }
+
+  .whoAreWe .buttonsDiv .button{
+    margin: 0 4%;
+    transform: scale(.6);
+  }
+
+  .whoAreWe .buttonsDiv .button:nth-child(1){
+    transform: scale(.6) rotate(180deg);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .whoAreWe .buttonsDiv{
+    top: 11rem;
+  }
+
+  .whoAreWe .buttonsDiv .button{
+    margin: 0 1%;
+    transform: scale(.55);
+  }
+
+  .whoAreWe .buttonsDiv .button:nth-child(1){
+    transform: scale(.55) rotate(180deg);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .whoAreWe .buttonsDiv{
+    top: 10rem;
+  }
+
+  .whoAreWe .buttonsDiv .button{
+    margin: 0 0%;
+    transform: scale(.35);
+  }
+
+  .whoAreWe .buttonsDiv .button:nth-child(1){
+    transform: scale(.35) rotate(180deg);
+  }
+}
+
 
 .card2 {
   position: absolute;
@@ -798,6 +995,11 @@ input[type=radio] {
   padding: .5rem 1.5rem;
   border-radius: .1rem;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer .endSection .copyrightAndCta button:hover{
+  background: rgba(19, 169, 157, 0.5);
 }
 
 .footer .endSection .copyrightAndCta button span{
@@ -965,6 +1167,10 @@ input[type=radio] {
 
     .whoAreWe{
       margin-top: -2rem;
+    }
+
+    .nav{
+      position: fixed;
     }
 
     .nav .navContent, .connectWallet{
